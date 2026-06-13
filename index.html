@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anupriya Santhosh | Portfolio</title>
+    <!-- Font Awesome Icons for the interactive skill badges -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+<style>
+:root {
+    --primary-blue: #1e3a8a; /* Bold dark blue for crisp head typography */
+    --accent-pink: #db2777; /* Deep pink accent color for highlights, links, and text icons */
+    --light-pink-bg: #fdf2f8; /* Soft pink tint background for modern subtle contrast */
+    --card-blend: #fff5f8; /* Beautiful soft pink-white tint to replace stark white card backgrounds */
+    --text-dark: #1f2937;
+    --text-gray: #4b5563;
+    --btn-gray: #0f172a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(180deg, #ffffff 0%, var(--light-pink-bg) 100%);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Navigation Menu matching layout screenshots */
+nav {
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.nav-links li a {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--accent-pink);
+    text-decoration: none;
+}
+
+header {
+    background-color: transparent;
+    text-align: center;
+    padding: 40px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures name and title stay perfectly centered together */
+    justify-content: center;
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+header img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(219, 39, 119, 0.15); /* Pink tint shadow */
+    position: relative;
+    z-index: 2;
+}
+
+.profile-glow {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(circle, rgba(219, 39, 119, 0.15) 0%, rgba(255,255,255,0) 70%); /* Soft pink glow background */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+h1 {
+    color: var(--primary-blue);
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+header p {
+    color: var(--accent-pink);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+}
+
+section {
+    background-color: var(--card-blend); /* Soft pink accent mist */
+    margin: 25px auto;
+    padding: 25px;
+    max-width: 600px; /* Aligns with compact profile view spacing */
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(219, 39, 119, 0.04);
+    border: 1px solid #fbcfe8;
+}
+
+h2 {
+    border-bottom: 2px solid #fbcfe8; /* Soft pink border line under titles */
+    padding-bottom: 8px;
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Centralizing Quick Links and Quick Actions buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    gap: 0.75rem;
+    margin: 1.5rem auto;
+}
+
+.btn {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--btn-gray);
+    color: #ffffff;
+}
+
+.btn-success {
+    background-color: var(--accent-pink); /* Accent pink download button */
+    color: #ffffff;
+}
+
+/* Metric Display Unit from the reference sample */
+.metrics-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 340px;
+    margin: 1.5rem auto 0 auto;
+}
+
+.metric-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 1.2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fce7f3; /* Pink tinted borders */
+}
+
+.metric-card .count {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--accent-pink);
+}
+
+.metric-card .label {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+/* Custom Skill Badge Grid styling */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+}
+
+.skill-badge {
+    background-color: #ffffff;
+    padding: 0.6rem 1.1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    border: 1px solid #fce7f3;
+}
+
+.skill-badge i {
+    font-size: 1.1rem;
+    color: var(--accent-pink);
+}
+
+/* Upgraded structural container blocks for projects */
+.project {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 20px;
+    border: 1px solid #fce7f3;
+    border-left: 4px solid var(--accent-pink); /* Left accent bar modified to pink */
+}
+
+.project h3 {
+    margin-top: 0;
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 6px;
+    color: var(--text-gray);
+}
+
+.project ul {
+    padding-left: 15px;
+}
+
+.project li {
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+/* Modern Contact row alignments */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.1rem;
+}
+
+a {
+    color: var(--accent-pink);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    color: var(--text-gray);
+    text-align: justify;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+/* Tablet and Desktop optimizations */
+@media (min-width: 768px) {
+    nav .nav-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .metrics-container {
+        flex-direction: row;
+        max-width: 100%;
+    }
+    .metric-card {
+        flex: 1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header Navigation -->
+<nav>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<header id="about">
+    <div class="profile-container">
+        <div class="profile-glow"></div>
+        <img src="profile.jpg" alt="Profile Photo">
+    </div>
+
+    <h1>Anupriya Santhosh</h1>
+    <p>Aspiring Software Engineer | Java Developer</p>
+
+    <!-- Interactive action buttons correctly configured -->
+    <div class="action-buttons">
+        <a href="Anu_resume.pdf" target="_blank" class="btn btn-primary">View Resume</a>
+        <a href="Anu_resume.pdf" download="Anu_resume.pdf" class="btn btn-success">Download Resume</a>
+    </div>
+
+    <div class="metrics-container">
+        <div class="metric-card">
+            <div class="count">5+</div>
+            <div class="label">Total Projects</div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>
+Final-year Electronics and Communication Engineering student with a strong passion for Software Engineering and backend development.
+Proficient in Java, Spring Boot, and REST API development with hands-on experience in building scalable applications.
+Completed practical projects including an AI-based Resume Analyzer and a Smart Bus Management System, focusing on real-time data processing and system design.
+Quick learner with strong problem-solving skills, currently exploring advanced backend technologies and industry practices.
+Seeking an entry-level Software Engineer role to apply technical skills and grow in a professional environment.
+    </p>
+</section>
+<!-- 🔥 EDUCATION -->
+<section id="education">
+    <h2>Education</h2>
+    <div class="project">
+        <h3>B.E. Electronics and Communication Engineering</h3>
+        <ul>
+            <li>College: Panimalar Engineering College</li>
+            <li>Duration: 2022 - 2026</li>
+            <li>CGPA: 8.8</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 🏆 ACHIEVEMENTS -->
+<section id="achievements">
+    <h2>Achievements</h2>
+    <div class="project">
+        <ul>
+            <li>Finalist / Semi-Finalist in Flipkart Grid 7.0</li>
+            <li>Completed JPMorgan Chase Virtual Software Engineering Internship</li>
+            <li>Built multiple academic + IoT based projects</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 📄 PUBLICATIONS -->
+<section id="publications">
+    <h2>Publications</h2>
+    <div class="project">
+        <h3>TRACKNSEAT: IoT-Based Smart Bus Seat & Management System</h3>
+        <ul>
+            <li>Published in ICACCT 2026 (Scopus Indexed Conference)</li>
+            <li>Focused on real-time IoT tracking and smart transportation system</li>
+        </ul>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-grid">
+        <li class="skill-badge"><i class="fab fa-java"></i> <b>Programming:</b> Java</li>
+        <li class="skill-badge"><i class="fas fa-leaf"></i> <b>Backend:</b> Spring Boot, REST APIs</li>
+        <li class="skill-badge"><i class="fas fa-database"></i> <b>Database:</b> SQL</li>
+        <li class="skill-badge"><i class="fas fa-cubes"></i> <b>Concepts:</b> OOPS</li>
+        <li class="skill-badge"><i class="fas fa-terminal"></i> <b>Tools:</b> Postman, Git (Basics), MATLAB, Eclipse IDE, SQL*Plus, IntelliJ</li>
+        <li class="skill-badge"><i class="fas fa-code"></i> <b>Frontend:</b> HTML, CSS</li>
+    </ul>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+        <h3>AI Resume Analyzer</h3>
+        <ul>
+            <li>Developed a backend application using Java and Spring Boot to analyze resumes.</li>
+            <li>Built REST APIs to process resume data and match it with job descriptions.</li>
+            <li>Implemented text-based analysis to identify relevant skills and roles.</li>
+            <li>Tested APIs using Postman to ensure accurate functionality.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <h3>TrackNSeat - Smart Bus Management System</h3>
+        <ul>
+            <li>Developed a smart transport system for real-time bus tracking and seat availability.</li>
+            <li>Integrated IoT-based sensors for passenger detection and monitoring.</li>
+            <li>Designed a multi-role system for Admin, Driver, and Passenger functionalities.</li>
+            <li>Enabled real-time data updates for efficient transport management.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <h3>Vehicle Accident Detection System</h3>
+        <ul>
+            <li>Built an Arduino-based accident detection system using GPS and GSM modules.</li>
+            <li>Implemented automatic accident detection and real-time SMS alert mechanism.</li>
+            <li>Designed the system to improve emergency response time and safety.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <h3>Distance and Noise Analysis</h3>
+        <ul>
+            <li>Developed MATLAB scripts for image noise reduction and analysis.</li>
+            <li>Implemented techniques for object distance measurement from images.</li>
+            <li>Improved accuracy of image processing through filtering methods.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <h3>Touch Switch Circuit</h3>
+        <ul>
+            <li>Designed and simulated a touch-activated electronic switch using KiCad.</li>
+            <li>Created schematic diagrams and PCB layouts for circuit implementation.</li>
+            <li>Demonstrated practical hardware design and simulation skills.</li>
+        </ul>
+    </div>
+
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-links">
+        <a href="mailto:anuanusanthosh616@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://linkedin.com/in/anupriya-santhosh-750119301" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Anupriya Santhosh. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
+ 
